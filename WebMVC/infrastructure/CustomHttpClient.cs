@@ -10,7 +10,7 @@ namespace WebMVC.infrastructure
     public class CustomHttpClient : IHttpClient
     {
         private readonly HttpClient _client;
-        public  CustomHttpClient()  //create constructor for CustomHttpClient
+        public CustomHttpClient()  //create constructor for CustomHttpClient
         {
             _client = new HttpClient();//this is the one behind the scence get you back the reponse
         }
@@ -23,7 +23,7 @@ namespace WebMVC.infrastructure
         public async Task<string> GetStringAsync(string uri, string authorizationToken = null, string authorizationMethod = "Bearer")
         {
             var requestMessage = new HttpRequestMessage(HttpMethod.Get, uri); //send HTTP request message and as a part of message the method is get 
-           if (authorizationToken != null)
+            if (authorizationToken != null)
             {
                 requestMessage.Headers.Authorization =
                     new System.Net.Http.Headers.AuthenticationHeaderValue(

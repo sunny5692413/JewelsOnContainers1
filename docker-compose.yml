@@ -26,8 +26,6 @@ services:
      depends_on:
        - mssqlserver
 
-
-
   mssqlserver:
      image: "microsoft/mssql-server-linux:latest"
      environment:
@@ -46,7 +44,7 @@ services:
     image: jewels/webmvc
     container_name: webshop
     environment:
-      CatalogUrl: http://catalog
+      CatalogUrl: http://localhost:6083
       ASPNETCORE_ENVIROMENT: Development
     ports:
       - "5211:80"
